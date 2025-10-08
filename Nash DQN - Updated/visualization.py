@@ -134,9 +134,9 @@ def draw_heatmap(net, t_step, q_step, p_step, t_range, q_range, p_range, n_agent
         t_list = np.linspace(t_range[0], t_range[1], t_step)
         im = plt.contourf(t_list, q_list, to_State_mesh(t_list,q_list,p,net,n_agents,default_inventory,i_val, norm_mean, norm_std, T=T, is_numpy=is_numpy, norm_input=norm_input, uniq_agent=uniq_agent), cmap='RdBu', vmin = a_range[0], vmax = a_range[1], levels = levels)
         im2 = plt.contour(t_list, q_list, to_State_mesh(t_list,q_list,p,net,n_agents,default_inventory,i_val, norm_mean, norm_std, T=T, is_numpy=is_numpy, norm_input=norm_input, uniq_agent=uniq_agent), levels = [0])
-        im2.gca().collections[0].set_linewidth(2)
-        im2.gca().collections[0].set_color('black')
-        im2.gca().collections[0].set_linestyle('dashed')
+        # im2.collections[0].set_linewidth(2)
+        # im2.collections[0].set_color('black')
+        # im2.collections[0].set_linestyle('dashed')
         
         xtick_loc = [0, 3]
         axes[i].set_xticks(xtick_loc)
@@ -189,9 +189,9 @@ def draw_heatmap_simple(net, t_step, q_step, p_step, t_range, q_range, p_range, 
         t_list = np.linspace(t_range[0], t_range[1], t_step)
         im = plt.contourf(t_list, q_list, to_State_mesh_simple(t_list,q_list,p,net,n_agents,default_inventory,i_val, norm_mean, norm_std, T=T), cmap='RdBu', vmin = a_range[0], vmax = a_range[1], levels = levels)
         im2 = plt.contour(t_list, q_list, to_State_mesh_simple(t_list,q_list,p,net,n_agents,default_inventory,i_val, norm_mean, norm_std, T=T), levels = [0])
-        im2.gca().collections[0].set_linewidth(2)
-        im2.gca().collections[0].set_color('black')
-        im2.gca().collections[0].set_linestyle('dashed')
+        # im2.collections[0].set_linewidth(2)
+        # im2.collections[0].set_color('black')
+        # im2.collections[0].set_linestyle('dashed')
         
         ax = plt.gca()
         ax.tick_params(axis='both', which='major', labelsize=20)
