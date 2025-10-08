@@ -178,7 +178,7 @@ def draw_heatmap_simple(net, t_step, q_step, p_step, t_range, q_range, p_range, 
     p_list = np.linspace(p_range[0], p_range[1], p_step)
     levels = np.linspace(a_range[0], a_range[1], a_range[1] - a_range[0] + 1)
     
-    fig, axes = plt.subplots(nrows=1, ncols=5,sharex='col', sharey='row')
+    fig, axes = plt.subplots(nrows=1, ncols=5,sharex='col', sharey='row', figsize=(8, 3))
         
     for p in p_list:
         plt.subplot(1,p_step,counter)
@@ -194,7 +194,7 @@ def draw_heatmap_simple(net, t_step, q_step, p_step, t_range, q_range, p_range, 
         # im2.collections[0].set_linestyle('dashed')
         
         ax = plt.gca()
-        ax.tick_params(axis='both', which='major', labelsize=20)
+        ax.tick_params(axis='both', which='major', labelsize=10)
         if counter > 2:
             ax.yaxis.set_visible(False)
             
@@ -203,7 +203,7 @@ def draw_heatmap_simple(net, t_step, q_step, p_step, t_range, q_range, p_range, 
     cbar_ax = fig.add_axes([0.85, 0.15, 0.05, 0.7])
     cb = fig.colorbar(im, cax=cbar_ax,ticks=np.linspace(a_range[0], a_range[1], 5))
     cb.ax.set_yticklabels(cb.ax.get_yticklabels(), fontsize=15)
-    fig.text(0.5, 0.01, 'Time', ha='center')
-    fig.text(0.01, 0.5, 'Inventory', va='center', rotation='vertical')
+    fig.text(0.5, -0.04, 'Time', ha='center')
+    fig.text(0.04, 0.5, 'Inventory', va='center', rotation='vertical')
   
     
