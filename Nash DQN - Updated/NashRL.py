@@ -127,6 +127,7 @@ def run_Nash_Agent(sim_obj, sim_dict, max_steps, nash_agent=None, num_sim=15000,
 
         # Sets Print Flag - Prints simulation results every 20 simuluations
         print_flag = (not k % 50) and k > 0
+        print_flag = 0
         if print_flag:
             #update slow value network
             last_loss = sum_loss[k-1]
