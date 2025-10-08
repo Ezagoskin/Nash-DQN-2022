@@ -123,7 +123,7 @@ def draw_heatmap(net, t_step, q_step, p_step, t_range, q_range, p_range, n_agent
     print(p_list)
     levels = np.linspace(a_range[0], a_range[1], a_range[1] - a_range[0] + 1)
     
-    fig, axes = plt.subplots(nrows=1, ncols=5,sharex='col', sharey='row')
+    fig, axes = plt.subplots(nrows=1, ncols=5,sharex='col', sharey='row', figsize=(8, 3))
         
     for i, p in enumerate(p_list):
         plt.subplot(1,p_step,counter)
@@ -151,8 +151,8 @@ def draw_heatmap(net, t_step, q_step, p_step, t_range, q_range, p_range, n_agent
     cbar_ax = fig.add_axes([0.85, 0.15, 0.05, 0.7])
     cb = fig.colorbar(im, cax=cbar_ax,ticks=np.linspace(a_range[0], a_range[1], 5))
     cb.ax.set_yticklabels(cb.ax.get_yticklabels(), fontsize=15)
-    fig.text(0.5, 0.01, 'Time', ha='center')
-    fig.text(0.01, 0.5, 'Inventory', va='center', rotation='vertical')
+    fig.text(0.5, -0.04, 'Time', ha='center')
+    fig.text(0.04, 0.5, 'Inventory', va='center', rotation='vertical')
     plt.savefig('Heatmap_OA_' + str(default_inventory))   
     
 def draw_heatmap_simple(net, t_step, q_step, p_step, t_range, q_range, p_range, n_agents, other_agent_inv,i_val, norm_mean, norm_std, a_range=[-20,20],T=5):
