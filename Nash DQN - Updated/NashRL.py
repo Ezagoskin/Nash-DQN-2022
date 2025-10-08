@@ -323,6 +323,7 @@ def run_Nash_Agent(sim_obj, sim_dict, max_steps, nash_agent=None, num_sim=15000,
 
         # Set Save Flag
         save_flag = not (k+1) % 500
+        save_flag = 0
         if save_flag:
             print("Saving weights to disk")
             torch.save(nash_agent.action_net.state_dict(),
